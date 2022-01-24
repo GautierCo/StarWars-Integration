@@ -1,0 +1,254 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #fff38a;
+    --secondary: #827b68;
+    --bg: #060447;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--primary);
+    font-family: "Montserrat", sans-serif;
+}
+
+/* Header */
+
+main {
+    padding: 3em;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.presentation {
+    width: 50%;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &-header {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &-logos {
+        display: flex;
+        overflow-x: hidden;
+    }
+
+    &-logo {
+        display: none;
+        margin-bottom: 24px;
+    }
+
+    .logo-active {
+        display: block;
+    }
+
+    &-titles {
+        display: flex;
+        flex-direction: row;
+        max-width: 509px;
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+    &-title {
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 48.76px;
+        margin-bottom: 8px;
+        display: none;
+        width: 100%;
+        white-space: nowrap;
+    }
+
+    .title-active {
+        display: flex;
+    }
+
+    &-descriptions {
+        display: flex;
+        max-width: 422px;
+    }
+
+    &-description {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 30px;
+        display: none;
+    }
+
+    .description-active {
+        display: block;
+    }
+
+    &-dates {
+        display: flex;
+        flex-direction: row;
+        max-width: 515px;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        white-space: nowrap;
+        gap: 15px;
+    }
+
+    &-date {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+
+        .date-img {
+            display: none;
+            font-size: 120px;
+        }
+    }
+
+    .date-active {
+        display: inline-block;
+    }
+}
+
+.poster {
+    width: 50%;
+    padding: 1em;
+
+    &-imgs {
+        max-width: 422px;
+        margin-right: 0;
+        margin-left: auto;
+        display: flex;
+        overflow-x: hidden;
+    }
+
+    &-img {
+        display: none;
+    }
+
+    &-active {
+        display: flex;
+    }
+}
+
+.naviguation {
+    margin-top: 80px;
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    &-arrows {
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
+        align-items: center;
+        gap: 45px;
+
+        .arrow-left,
+        .arrow-right {
+            opacity: 0.55;
+        }
+
+        .arrow-active {
+            cursor: pointer;
+            opacity: 1;
+        }
+    }
+
+    &-arrows:first-child img {
+        align-self: flex-start;
+        margin: auto;
+    }
+
+    &-arrows:last-child img {
+        align-self: flex-end;
+        margin: auto;
+    }
+
+    &-progress {
+        width: 75%;
+        position: relative;
+
+        &-bar {
+            position: absolute;
+            background: var(--primary);
+            height: 5px;
+            width: 0%;
+            top: 50%;
+            left: 0;
+            z-index: -8;
+            transition: width 0.25s;
+            max-width: 100%;
+        }
+    }
+
+    &-steps {
+        display: flex;
+        justify-content: space-between;
+        z-index: 20;
+
+        .step::before {
+            content: "";
+            background-color: var(--secondary);
+            position: absolute;
+            top: 50%;
+            left: 0;
+            height: 5px;
+            width: 100%;
+            z-index: -10;
+        }
+
+        .step-circle {
+            fill: var(--secondary);
+            transition: fill 0.35s;
+        }
+
+        .step-circle-active {
+            fill: var(--primary);
+            stroke: var(--secondary);
+            stroke-width: 2;
+            transition: fill 0.35s;
+        }
+    }
+}
+
+.next {
+    animation: onEnter 0.55s normal;
+}
+
+.back {
+    animation: onExit 0.25s normal;
+}
+
+@keyframes onExit {
+    0% {
+        transform: translate(0, 0);
+        display: block;
+    }
+
+    100% {
+        transform: translate(-150px, 0);
+        display: none;
+    }
+}
+
+@keyframes onEnter {
+    0% {
+        opacity: 0;
+        display: none;
+        transform: translate(50px, 0);
+    }
+
+    100% {
+        opacity: 1;
+        display: block;
+        transform: translate(0, 0);
+    }
+}

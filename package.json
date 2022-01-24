@@ -1,0 +1,16 @@
+{
+    "name": "Starwars",
+    "version": "1.0.0",
+    "author": "Gautier Colasse",
+    "license": "MIT",
+    "devDependencies": {
+        "@parcel/transformer-sass": "^2.2.1",
+        "parcel": "^2.2.1"
+    },
+    "scripts": {
+        "start": "parcel src/index.html"
+    },
+    "dependencies": {
+        "sass": "^1.49.0"
+    }
+}
