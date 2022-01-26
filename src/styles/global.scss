@@ -14,6 +14,7 @@ body {
     background-color: var(--bg);
     color: var(--primary);
     font-family: "Montserrat", sans-serif;
+    overflow-x: hidden;
 }
 
 /* Header */
@@ -40,24 +41,25 @@ main {
 
     &-logos {
         display: flex;
-        overflow-x: hidden;
+        gap: 15px;
     }
 
     &-logo {
-        display: none;
+        opacity: 0;
         margin-bottom: 24px;
     }
 
     .logo-active {
         display: block;
+        opacity: 1;
     }
 
     &-titles {
         display: flex;
         flex-direction: row;
         max-width: 509px;
-        overflow-x: hidden;
         width: 100%;
+        gap: 15px;
     }
 
     &-title {
@@ -65,29 +67,41 @@ main {
         font-size: 40px;
         line-height: 48.76px;
         margin-bottom: 8px;
-        display: none;
-        width: 100%;
+        width: 33%;
         white-space: nowrap;
+        opacity: 0;
+        visibility: hidden;
     }
 
     .title-active {
         display: flex;
+        opacity: 1;
+        visibility: visible;
     }
 
     &-descriptions {
         display: flex;
+        flex-direction: row;
         max-width: 422px;
+        width: 100%;
+        gap: 15px;
+        flex-wrap: nowrap;
     }
 
     &-description {
         font-size: 20px;
         font-weight: 400;
         line-height: 30px;
-        display: none;
+        opacity: 0;
+        width: 33%;
+        visibility: hidden;
+        white-space: nowrap;
     }
 
     .description-active {
         display: block;
+        opacity: 1;
+        visibility: visible;
     }
 
     &-dates {
@@ -108,11 +122,18 @@ main {
         .date-img {
             display: none;
             font-size: 120px;
+            opacity: 0;
+            transition: 1s linear;
         }
     }
 
     .date-active {
+        transition: 1s linear;
         display: inline-block;
+        opacity: 1;
+    }
+    .date-active:active {
+        opacity: 1;
     }
 }
 
@@ -129,7 +150,6 @@ main {
     }
 
     &-img {
-        display: none;
     }
 
     &-active {
