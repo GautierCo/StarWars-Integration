@@ -16,11 +16,15 @@ const updateDate = () => {
         const previousDate = dates[previousStep - 1].children[key];
         const previousNbr = dates[previousStep - 1].children[key].getAttribute("data-date-number");
         const nextNbr = dates[activeStep - 1].children[key].getAttribute("data-date-number");
-        // const dateWidth = document.querySelector(".presentation-dates").getBoundingClientRect().width;
 
         if (previousNbr !== nextNbr) {
-            previousDate.classList.remove("date-active");
-            nextDate.classList.add("date-active");
+            previousDate.classList.remove("date-out", "date-in", "date-active");
+
+            if (activeStep > previousStep) {
+                nextDate.classList.add("date-in");
+            } else {
+                nextDate.classList.add("date-out");
+            }
         }
     });
 };
@@ -67,7 +71,6 @@ const updateHeader = (nextStep) => {
         nextElement.style.opacity = 1;
 
         elements.forEach((element) => {
-            console.log(0.255 + key / 6);
             element.style.transition = `${0.255 + key / 6}s linear`;
             element.style.transform = `translateX(${-nextStep * elementWidth - 15 * nextStep}px)`;
         });
