@@ -1,3 +1,5 @@
+// Need to refacto this code
+
 const arrowLeft = document.querySelector(".arrow-left");
 const arrowRight = document.querySelector(".arrow-right");
 
