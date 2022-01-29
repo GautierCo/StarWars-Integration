@@ -23,8 +23,6 @@ body {
     overflow-x: hidden;
 }
 
-/* Header */
-
 main {
     padding: 3em;
     display: flex;
@@ -123,7 +121,6 @@ main {
         font-family: "GT-Ultra-Median-Bold-Trial", sans-serif;
         font-weight: 900;
         font-size: 14em;
-        //font-size: 15vw;
         margin: auto;
         width: 100%;
         display: flex;
@@ -137,11 +134,11 @@ main {
         }
 
         .date-in {
-            animation: fade-in 0.25s;
+            animation: fade-in 0.35s;
         }
 
         .date-out {
-            animation: fade-out 0.25s;
+            animation: fade-out 0.35s;
         }
     }
 

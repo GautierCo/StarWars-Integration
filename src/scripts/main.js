@@ -71,7 +71,7 @@ const updateHeader = (nextStep) => {
         nextElement.style.opacity = 1;
 
         elements.forEach((element) => {
-            element.style.transition = `${0.255 + key / 6}s linear`;
+            element.style.transition = `${0.15 + key / 6}s linear`;
             element.style.transform = `translateX(${-nextStep * elementWidth - 15 * nextStep}px)`;
         });
     });
@@ -114,7 +114,6 @@ arrowRight.addEventListener("click", (e) => {
     }
 });
 
-//
 // OnClick back
 arrowLeft.addEventListener("click", (e) => {
     if (activeStep > 1) {

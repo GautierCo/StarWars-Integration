@@ -7,8 +7,19 @@
         "@parcel/transformer-sass": "^2.2.1",
         "parcel": "^2.2.1"
     },
+    "builds": [
+        {
+            "src": "src/index.html",
+            "use": "@vercel/node"
+        }
+    ],
+    "source": [
+        "src/index.html"
+    ],
     "scripts": {
-        "start": "parcel src/index.html --no-cache"
+        "start": "parcel src/index.html --no-cache",
+        "vercel-build": "parcel build src/index.html",
+        "build": "BUILD_PATH='./dist' parcel build src/index.html"
     },
     "dependencies": {
         "sass": "^1.49.0"
